@@ -15,14 +15,14 @@ const products = [
     {id: '8', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая'},
 ]
 
-const getTotalPrice = (items) => {
+const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {
         return acc += item.price
     }, 0)
 }
-const ProductList = () => {
 
-    //Корзина
+//Корзина
+const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg} = useTelegram()
     const aonAdd = (product) => {
